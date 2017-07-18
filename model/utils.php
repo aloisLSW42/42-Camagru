@@ -12,3 +12,8 @@ function alert($text)
 {
 	echo '<div class="alert">'.$text.'</div>';
 }
+
+function gen_token()
+{
+	return (bin2hex(random_bytes(32)));
+}

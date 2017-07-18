@@ -4,12 +4,24 @@ if (isset($_POST["login"]) && $_POST["login"] != "" && isset($_POST["email"]) &&
 {
 	if ($_POST["email"] !== $_POST["email_confirmation"])
 	{
-		header("./index.php?view=registration&msg=error_email");
+		header("Location: ../index.php?view=registration&msg=error_email");
 	}
 	else if ($_POST["password"] !== $_POST["password_confirmation"])
 	{
-		header("./index.php?view=registration&msg=error_password");
+		header("Location: ../index.php?view=registration&msg=error_password");
 	}
 	else
-		set_user($_POST["login"], $_POST["email"], $_POST["password"]);
+	{
+		if (available_login_email($_POST["login"], $_POST["email"]))
+		{
+			set_user($_POST["login"], $_POST["email"], $_POST["password"]);
+			header("Location: ../index.php?view=registration&msg=user_set");
+		}
+		else
+			header("Location: ../index.php?view=registration&msg=error_available");
+	}
+}
+else if (isset($_GET['token']) && $_GET['token'] != "")
+{
+	confirmation_user($_GET['token']);
 }

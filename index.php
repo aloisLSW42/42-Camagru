@@ -12,9 +12,7 @@
 				<a href="./index.php?view=gallery"><div class="link">Gallery</div></a>
 			</div>
 			<div class="right">
-				<a href="./index.php?view=login"><div class="link">Login</div></a>
-				<a href="./index.php?view=registration"><div class="link">registration</div></a>
-				<a href="./index.php?view=logout"><div class="link">Logout</div></a>
+				<?php put_nav(); ?>
 			</div>
 		</header>
 		<div class="main">

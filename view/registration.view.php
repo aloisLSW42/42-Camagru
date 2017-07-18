@@ -23,5 +23,6 @@
 			<input type="password" placeholder="password" name="password_confirmation"/>
 		</div>
 		<input type="submit" value="Register"/>
+		<a href="./index.php?view=forgotten_password">Forgotten password</a>
 	</form>
 </div>
