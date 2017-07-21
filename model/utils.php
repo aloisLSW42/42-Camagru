@@ -17,3 +17,9 @@ function gen_token()
 {
 	return (bin2hex(random_bytes(32)));
 }
+
+function sanitize($user_input)
+{
+	//todo upgrade
+	return (htmlspecialchars($user_input));
+}

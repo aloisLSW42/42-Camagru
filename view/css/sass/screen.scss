@@ -234,10 +234,6 @@ body
 //				background-image:url("https://i.ytimg.com/vi/rZIxpcuUPJE/maxresdefault.jpg");
 				background-size:cover;
 				background-color:gray;
-				&:hover
-				{
-					cursor:pointer;
-				}
 			}
 
 			video, canvas
@@ -296,8 +292,9 @@ body
 
 				.coms, .pics
 				{
-					height:67vh;
-					overflow:auto;	
+					height:60vh;
+					overflow-y:auto;
+					word-wrap:break-word;
 				}
 				
 				.pics
@@ -336,6 +333,7 @@ body
 					{
 						width:100%;
 						height:26px;
+						@include float-left;
 					}
 					
 					p
@@ -343,12 +341,68 @@ body
 						text-align:center;
 						margin:8px;
 					}
+
+					.like, .comment
+					{
+						width:50%;
+						height:48px;
+						position:relative;
+						@include float-left;
+						.value
+						{
+							width:100px;
+							height:32px;
+
+							top:0px;
+							left:32px;
+							position:absolute;
+
+							line-height:32px;
+
+							font-size:22px;
+							text-align:left;
+							font-family:Arial;
+							margin-left:10px;
+						}
+
+						.icon
+						{
+							width:32px;
+							height:32px;
+							top:0px;
+							left:0px;
+							position:absolute;
+						
+							background-image:url("../../img/icon/like.png");
+							background-size:cover;
+							&:hover
+							{
+								cursor:pointer;
+							}
+						}
+			
+						.liked
+						{
+							background-image:url("../../img/icon/liked.png");
+						}
+					}
+		
+					.comment
+					{
+						.icon
+						{
+							background-image:url("../../img/icon/comments.png");
+							&:hover
+							{
+								cursor:normal !important;
+							}
+						}
+					}
 				}
 			}
 		}	
 	}
 
-	
 	footer
 	{
 		width:100%;
